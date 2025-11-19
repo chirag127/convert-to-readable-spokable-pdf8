@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert technical PDFs into TTS-optimized Spokable PDFs using AI">
+    <meta name="author" content="Chirag Singhal">
+    <title>Readable Spokable PDF Converter</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32">
+                    <path
+                        d="M16 2L4 8v12c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V8L16 2zm0 4l8 4.5v7.5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12v-7.5L16 6z"
+                        fill="currentColor" />
+                    <path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                <span class="brand-text">Spokable PDF</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="icon-btn" aria-label="Toggle dark mode">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32l2.12-2.12"
+                        stroke="currentColor" stroke-width="2" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Convert PDFs to Spokable Format</h1>
+            <p class="subtitle">Transform technical PDFs into TTS-optimized documents using Google Gemini AI</p>
+        </section>
+
+        <div id="welcomeWalkthrough" class="walkthrough-card">
+            <button class="close-btn" aria-label="Close walkthrough">&times;</button>
+            <h3>👋 Welcome! Let's get started</h3>
+            <ol class="walkthrough-steps">
+                <li>Get your free Gemini API key from <a href="https://aistudio.google.com/app/apikey"
+                        target="_blank">Google AI Studio</a></li>
+                <li>Go to <a href="settings.html">Settings</a> and save your API key</li>
+                <li>Return here and drag & drop your PDF file</li>
+                <li>Watch the magic happen! ✨</li>
+            </ol>
+            <button class="btn btn-primary"
+                onclick="document.getElementById('welcomeWalkthrough').style.display='none'">Got it!</button>
+        </div>
+
+        <section class="upload-section">
+            <div id="dropZone" class="drop-zone">
+                <svg class="upload-icon" width="64" height="64" viewBox="0 0 24 24">
+                    <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z" fill="currentColor" />
+                </svg>
+                <h2>Drag & Drop PDF Here</h2>
+                <p>or click to browse</p>
+                <input type="file" id="fileInput" accept=".pdf" style="display:none;">
+                <button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">Choose
+                    File</button>
+            </div>
+
+            <div id="fileInfo" class="file-info" style="display:none;">
+                <div class="file-details">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" fill="currentColor" />
+                    </svg>
+                    <div>
+                        <strong id="fileName"></strong>
+                        <span id="fileSize"></span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="processBtn">Process PDF</button>
+            </div>
+        </section>
+
+        <section id="progressSection" class="progress-section" style="display:none;">
+            <div class="progress-card">
+                <h3 id="progressStage">Initializing...</h3>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText">0%</p>
+                <div id="progressDetails" class="progress-details"></div>
+                <button id="cancelBtn" class="btn btn-danger">Cancel</button>
+            </div>
+        </section>
+
+        <section id="resultSection" class="result-section" style="display:none;">
+            <div class="result-card">
+                <svg class="success-icon" width="64" height="64" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="#10b981" opacity="0.2" />
+                    <path d="M9 12l2 2 4-4" stroke="#10b981" stroke-width="2" fill="none" />
+                </svg>
+                <h2>✅ Conversion Complete!</h2>
+                <p id="resultMessage"></p>
+                <div class="result-actions">
+                    <button id="downloadBtn" class="btn btn-success">Download Spokable PDF</button>
+                    <button id="processAnotherBtn" class="btn btn-secondary">Process Another</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Spokable PDF?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                            fill="currentColor" />
+                    </svg>
+                    <h3>AI-Powered</h3>
+                    <p>Uses Google Gemini 3.0 to intelligently transform technical content</p>
+                </div>
+                <div class="feature-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+                            fill="currentColor" />
+                    </svg>
+                    <h3>100% Private</h3>
+                    <p>All processing happens in your browser. Your files never leave your device</p>
+                </div>
+                <div class="feature-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24">
+                        <path
+                            d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"
+                            fill="currentColor" />
+                    </svg>
+                    <h3>Fast Processing</h3>
+                    <p>Turbo mode with parallel API requests for lightning-fast conversions</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Chirag Singhal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://github.com/chirag127" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

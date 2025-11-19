@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Spokable PDF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32">
+                    <path
+                        d="M16 2L4 8v12c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V8L16 2zm0 4l8 4.5v7.5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12v-7.5L16 6z"
+                        fill="currentColor" />
+                    <path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                <span class="brand-text">Spokable PDF</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="icon-btn">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32l2.12-2.12"
+                        stroke="currentColor" stroke-width="2" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>How do I get a Gemini API key?</h3>
+                <p>Visit <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a> and sign
+                    in with your Google account. Click "Create API Key" and copy it. The free tier includes generous
+                    usage limits.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data safe?</h3>
+                <p>Absolutely. Spokable PDF runs entirely in your browser. Your PDF files are processed locally and
+                    never uploaded to any server. Only the extracted text is sent to Google's Gemini API for
+                    transformation. Your API key is stored locally in your browser's storage.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What file size limits exist?</h3>
+                <p>There's no hard limit imposed by the app itself. However, very large PDFs (100+ pages) may take
+                    longer to process and consume more API quota. The app uses intelligent batching to handle large
+                    documents efficiently.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which AI model should I use?</h3>
+                <p>For most users, <strong>Gemini 2.5 Flash</strong> (default) offers the best balance of speed,
+                    quality, and cost. Use Gemini 3 Pro Preview for maximum quality on complex technical documents. Use
+                    Flash Lite for faster processing of simpler documents.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is Turbo Mode?</h3>
+                <p>Turbo Mode processes multiple batches of your PDF simultaneously using parallel API requests. This
+                    significantly speeds up conversion but may hit rate limits faster. Disable it if you encounter
+                    frequent rate limit errors.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How much does it cost?</h3>
+                <p>The app itself is completely free and open source. You only pay for Google Gemini API usage based on
+                    your consumption. The free tier includes 15 requests per minute and 1,500 requests per day, which is
+                    sufficient for most users. See <a href="pricing.html">pricing details</a>.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I customize the conversion prompts?</h3>
+                <p>Yes! Go to <a href="settings.html">Settings</a> and scroll to "Prompt Customization". You can modify
+                    how code blocks, tables, math notation, and general text are transformed. This allows you to tailor
+                    the output to your specific needs.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What happens if processing fails?</h3>
+                <p>The app includes robust error handling with automatic retries. If a batch fails due to rate limits,
+                    it will retry with exponential backoff. If you've configured a backup API key, it will automatically
+                    failover. You can also download partially processed PDFs if needed.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does it work offline?</h3>
+                <p>The app interface works offline once loaded, but PDF conversion requires an internet connection to
+                    communicate with the Gemini API. The actual PDF processing (extraction and generation) happens
+                    locally in your browser.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which TTS apps work best with Spokable PDFs?</h3>
+                <p>Spokable PDFs work with any TTS application. Popular choices include Moon+ Reader Pro (Android),
+                    Voice Dream Reader (iOS), Natural Reader, and built-in accessibility features in Adobe Acrobat and
+                    web browsers.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I process scanned PDFs?</h3>
+                <p>Currently, the app works best with text-based PDFs. Scanned PDFs (images of text) require OCR
+                    (Optical Character Recognition) first. Consider using Adobe Acrobat or online OCR tools to convert
+                    scanned PDFs to text-based PDFs before processing.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How accurate is the AI transformation?</h3>
+                <p>Google Gemini is highly accurate for technical content. However, AI can occasionally misinterpret
+                    complex notation or context. Always review critical documents. You can adjust prompts in Settings to
+                    improve accuracy for your specific use case.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I contribute to the project?</h3>
+                <p>Yes! Spokable PDF is open source. Visit the <a href="https://github.com/chirag127/spokable-pdf"
+                        target="_blank">GitHub repository</a> to report bugs, suggest features, or submit pull requests.
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What browsers are supported?</h3>
+                <p>Spokable PDF works on all modern browsers that support ES6+ JavaScript, IndexedDB, and the File API.
+                    This includes Chrome, Firefox, Safari, and Edge (latest versions).</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Chirag Singhal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://github.com/chirag127" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/ui-manager.js"></script>
+</body>
+
+</html>

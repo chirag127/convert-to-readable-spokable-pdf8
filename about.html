@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Spokable PDF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32">
+                    <path
+                        d="M16 2L4 8v12c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V8L16 2zm0 4l8 4.5v7.5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12v-7.5L16 6z"
+                        fill="currentColor" />
+                    <path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                <span class="brand-text">Spokable PDF</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="icon-btn">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32l2.12-2.12"
+                        stroke="currentColor" stroke-width="2" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="content-page">
+            <h1>About Spokable PDF</h1>
+
+            <section>
+                <h2>The Problem</h2>
+                <p>Technical documentation, research papers, and educational materials are increasingly consumed through
+                    text-to-speech (TTS) systems. Whether you're commuting, exercising, or simply prefer audio learning,
+                    TTS apps like Moon+ Reader Pro have become essential tools.</p>
+                <p>However, standard PDFs contain elements that sound like gibberish when read aloud:</p>
+                <ul>
+                    <li><strong>Code blocks</strong> - Line-by-line reading of syntax is incomprehensible</li>
+                    <li><strong>Tables</strong> - Raw data without context loses meaning</li>
+                    <li><strong>Mathematical equations</strong> - Notation like "x^2" or "∑" isn't spoken naturally</li>
+                    <li><strong>Figures and diagrams</strong> - Visual information is completely lost</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>The Solution</h2>
+                <p>Spokable PDF uses Google's Gemini AI to intelligently transform technical content into natural,
+                    conversational language optimized for TTS systems.</p>
+                <p>Instead of reading code line by line, it explains what the code does. Instead of listing table cells,
+                    it describes the data relationships. Mathematical notation is converted to spoken words.</p>
+            </section>
+
+            <section>
+                <h2>How It Works</h2>
+                <ol>
+                    <li><strong>Extract</strong> - PDF.js extracts text, code blocks, tables, and identifies images</li>
+                    <li><strong>Analyze</strong> - Content is intelligently chunked and categorized</li>
+                    <li><strong>Transform</strong> - Gemini AI converts technical elements into natural language</li>
+                    <li><strong>Reconstruct</strong> - A new PDF is generated with TTS-optimized content</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Privacy & Security</h2>
+                <p>Your privacy is paramount. Spokable PDF is a 100% client-side application:</p>
+                <ul>
+                    <li>All processing happens in your browser</li>
+                    <li>Your PDF files never leave your device</li>
+                    <li>API keys are stored locally in your browser</li>
+                    <li>No server-side storage or tracking</li>
+                    <li>Open source and auditable</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Technology Stack</h2>
+                <ul>
+                    <li><strong>Frontend</strong> - Pure HTML5, CSS3, Vanilla JavaScript (ES6+)</li>
+                    <li><strong>AI</strong> - Google Gemini API (3.0, 2.5, 2.0 series)</li>
+                    <li><strong>PDF Processing</strong> - PDF.js for extraction, jsPDF for generation</li>
+                    <li><strong>Storage</strong> - IndexedDB for files, LocalStorage for settings</li>
+                    <li><strong>Deployment</strong> - Static hosting (GitHub Pages, Vercel)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>About the Developer</h2>
+                <p><strong>Chirag Singhal</strong> is a full-stack developer based in Bhubaneswar, Odisha, India.
+                    Passionate about making technology more accessible, Chirag builds tools that solve real-world
+                    problems.</p>
+                <p>Connect on <a href="https://github.com/chirag127" target="_blank">GitHub</a> or reach out via the <a
+                        href="contact.html">contact page</a>.</p>
+            </section>
+
+            <section>
+                <h2>Open Source</h2>
+                <p>Spokable PDF is open source and welcomes contributions. Found a bug? Have a feature idea? Check out
+                    the <a href="https://github.com/chirag127/spokable-pdf" target="_blank">GitHub repository</a>.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Chirag Singhal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://github.com/chirag127" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/ui-manager.js"></script>
+</body>
+
+</html>

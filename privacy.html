@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Spokable PDF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32">
+                    <path
+                        d="M16 2L4 8v12c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V8L16 2zm0 4l8 4.5v7.5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12v-7.5L16 6z"
+                        fill="currentColor" />
+                    <path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                <span class="brand-text">Spokable PDF</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="icon-btn">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32l2.12-2.12"
+                        stroke="currentColor" stroke-width="2" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="content-page">
+            <h1>Privacy Policy</h1>
+            <p><em>Last Updated: November 19, 2025</em></p>
+
+            <section>
+                <h2>Introduction</h2>
+                <p>Spokable PDF ("we", "our", or "the application") is committed to protecting your privacy. This
+                    Privacy Policy explains how we handle your data when you use our PDF conversion service.</p>
+            </section>
+
+            <section>
+                <h2>Data Collection</h2>
+                <h3>What We DON'T Collect</h3>
+                <ul>
+                    <li>We do NOT collect, store, or transmit your PDF files to any server</li>
+                    <li>We do NOT track your browsing behavior</li>
+                    <li>We do NOT use cookies or analytics</li>
+                    <li>We do NOT require account creation or personal information</li>
+                    <li>We do NOT sell or share any data with third parties</li>
+                </ul>
+
+                <h3>What Stays on Your Device</h3>
+                <ul>
+                    <li><strong>API Keys:</strong> Stored locally in your browser's LocalStorage</li>
+                    <li><strong>Settings:</strong> Your preferences (model selection, prompts, etc.) stored in
+                        LocalStorage</li>
+                    <li><strong>PDF Files:</strong> Temporarily stored in IndexedDB during processing, automatically
+                        cleared after completion</li>
+                    <li><strong>Dark Mode Preference:</strong> Stored in LocalStorage</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Third-Party Services</h2>
+                <h3>Google Gemini API</h3>
+                <p>When you process a PDF, extracted text is sent to Google's Gemini API for transformation. This is
+                    governed by Google's privacy policy:</p>
+                <ul>
+                    <li>Only the extracted text content is sent (not the entire PDF file)</li>
+                    <li>Your API key authenticates the requests</li>
+                    <li>Google's data usage policies apply to API interactions</li>
+                    <li>Review <a href="https://ai.google.dev/terms" target="_blank">Google's Gemini API Terms</a></li>
+                </ul>
+
+                <h3>CDN Resources</h3>
+                <p>The application loads PDF.js and jsPDF libraries from CDNs. These are standard, widely-used libraries
+                    with no tracking or data collection.</p>
+            </section>
+
+            <section>
+                <h2>Data Security</h2>
+                <ul>
+                    <li>All processing happens client-side in your browser</li>
+                    <li>API keys are stored locally and never transmitted to our servers (we don't have servers)</li>
+                    <li>No backend database or server-side storage exists</li>
+                    <li>Your files never leave your device except for text sent to Gemini API</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Your Rights</h2>
+                <p>Since all data is stored locally on your device, you have complete control:</p>
+                <ul>
+                    <li><strong>Access:</strong> View your settings and API keys in the Settings page</li>
+                    <li><strong>Delete:</strong> Clear your browser's LocalStorage and IndexedDB to remove all data</li>
+                    <li><strong>Export:</strong> Your settings are stored in plain text in LocalStorage</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Children's Privacy</h2>
+                <p>Spokable PDF does not knowingly collect any information from children under 13. The service is
+                    designed for general use and does not require age verification.</p>
+            </section>
+
+            <section>
+                <h2>Open Source</h2>
+                <p>Spokable PDF is open source. You can audit the entire codebase on <a
+                        href="https://github.com/chirag127/spokable-pdf" target="_blank">GitHub</a> to verify our
+                    privacy claims.</p>
+            </section>
+
+            <section>
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an
+                    updated "Last Updated" date. Continued use of the application after changes constitutes acceptance
+                    of the updated policy.</p>
+            </section>
+
+            <section>
+                <h2>Contact</h2>
+                <p>If you have questions about this Privacy Policy, please contact:</p>
+                <p><strong>Chirag Singhal</strong><br>
+                    Email: <a href="mailto:chiragsinghal127@gmail.com">chiragsinghal127@gmail.com</a><br>
+                    GitHub: <a href="https://github.com/chirag127" target="_blank">@chirag127</a></p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Chirag Singhal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://github.com/chirag127" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/ui-manager.js"></script>
+</body>
+
+</html>

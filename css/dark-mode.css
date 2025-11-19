@@ -1,0 +1,72 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    --bg-color: #111827;
+    --surface-color: #1f2937;
+    --border-color: #374151;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .navbar {
+    background-color: var(--surface-color);
+}
+
+body.dark-mode .drop-zone {
+    background-color: var(--surface-color);
+}
+
+body.dark-mode .drop-zone:hover,
+body.dark-mode .drop-zone.drag-over {
+    background-color: rgba(99, 102, 241, 0.1);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .btn-secondary {
+    background-color: var(--surface-color);
+    color: var(--text-primary);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: var(--border-color);
+}
+
+body.dark-mode .notification.success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #6ee7b7;
+    border-color: #10b981;
+}
+
+body.dark-mode .cost-table th {
+    background-color: var(--primary-hover);
+}
+
+body.dark-mode .walkthrough-card {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+}
+
+/* Dark mode toggle animation */
+.sun-icon,
+.moon-icon {
+    transition: var(--transition);
+}
+
+body.dark-mode .sun-icon {
+    display: none;
+}
+
+body.dark-mode .moon-icon {
+    display: block !important;
+}

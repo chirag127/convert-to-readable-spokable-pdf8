@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Spokable PDF</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32">
+                    <path
+                        d="M16 2L4 8v12c0 7.5 5.2 14.5 12 16 6.8-1.5 12-8.5 12-16V8L16 2zm0 4l8 4.5v7.5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12v-7.5L16 6z"
+                        fill="currentColor" />
+                    <path d="M12 16l3 3 6-6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                <span class="brand-text">Spokable PDF</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="darkModeToggle" class="icon-btn">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12m11.32-11.32l2.12-2.12"
+                        stroke="currentColor" stroke-width="2" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Pricing</h1>
+        <p class="subtitle">Spokable PDF is free. You only pay for Google Gemini API usage.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Recommended</div>
+                <h2>Free Tier</h2>
+                <div class="price">$0<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li>✓ 15 requests per minute</li>
+                    <li>✓ 1,500 requests per day</li>
+                    <li>✓ 1 million tokens per day</li>
+                    <li>✓ All Gemini models</li>
+                    <li>✓ Perfect for personal use</li>
+                    <li>✓ No credit card required</li>
+                </ul>
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" class="btn btn-primary">Get Free API
+                    Key</a>
+            </div>
+
+            <div class="pricing-card">
+                <h2>Pay As You Go</h2>
+                <div class="price">Variable</div>
+                <ul class="pricing-features">
+                    <li>✓ Higher rate limits</li>
+                    <li>✓ Unlimited daily requests</li>
+                    <li>✓ Priority processing</li>
+                    <li>✓ All Gemini models</li>
+                    <li>✓ Pay only for what you use</li>
+                    <li>✓ Billing through Google Cloud</li>
+                </ul>
+                <a href="https://ai.google.dev/pricing" target="_blank" class="btn btn-secondary">View Pricing
+                    Details</a>
+            </div>
+        </div>
+
+        <section class="pricing-details">
+            <h2>Understanding Costs</h2>
+
+            <div class="cost-table">
+                <h3>Gemini API Pricing (as of November 2025)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Input (per 1M tokens)</th>
+                            <th>Output (per 1M tokens)</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gemini 2.5 Flash</td>
+                            <td>$0.075</td>
+                            <td>$0.30</td>
+                            <td>Most users (default)</td>
+                        </tr>
+                        <tr>
+                            <td>Gemini 2.5 Pro</td>
+                            <td>$1.25</td>
+                            <td>$5.00</td>
+                            <td>Complex documents</td>
+                        </tr>
+                        <tr>
+                            <td>Gemini 2.5 Flash Lite</td>
+                            <td>$0.04</td>
+                            <td>$0.15</td>
+                            <td>Simple documents</td>
+                        </tr>
+                        <tr>
+                            <td>Gemini 3 Pro Preview</td>
+                            <td>$2.50</td>
+                            <td>$10.00</td>
+                            <td>Maximum quality</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cost-examples">
+                <h3>Example Costs</h3>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <h4>Small PDF (10 pages)</h4>
+                        <p>~5,000 tokens</p>
+                        <p class="cost">≈ $0.002 with Flash</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Medium PDF (50 pages)</h4>
+                        <p>~25,000 tokens</p>
+                        <p class="cost">≈ $0.01 with Flash</p>
+                    </div>
+                    <div class="example-card">
+                        <h4>Large PDF (200 pages)</h4>
+                        <p>~100,000 tokens</p>
+                        <p class="cost">≈ $0.04 with Flash</p>
+                    </div>
+                </div>
+                <p class="note">* Estimates based on Gemini 2.5 Flash. Actual costs vary based on content complexity and
+                    output length.</p>
+            </div>
+
+            <div class="tips-section">
+                <h3>💡 Cost Optimization Tips</h3>
+                <ul>
+                    <li>Use <strong>Gemini 2.5 Flash</strong> (default) for best value</li>
+                    <li>Enable <strong>Turbo Mode</strong> to reduce processing time (doesn't affect cost)</li>
+                    <li>Increase <strong>batch size</strong> to reduce number of API calls</li>
+                    <li>Use <strong>Flash Lite</strong> for simple documents without complex code/tables</li>
+                    <li>The free tier (1,500 requests/day) is sufficient for most personal use</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Pricing FAQ</h2>
+            <div class="faq-item">
+                <h4>Is Spokable PDF free?</h4>
+                <p>Yes, the application itself is completely free and open source. You only pay for Google Gemini API
+                    usage based on your consumption.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I get started for free?</h4>
+                <p>Visit <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a> and
+                    create a free API key. The free tier includes generous limits suitable for personal use.</p>
+            </div>
+            <div class="faq-item">
+                <h4>When do I need to pay?</h4>
+                <p>You only need to upgrade to a paid plan if you exceed the free tier limits (15 requests/minute or
+                    1,500 requests/day). For most users, the free tier is sufficient.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How can I track my usage?</h4>
+                <p>Visit the <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>
+                    dashboard to monitor your API usage and costs in real-time.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Chirag Singhal. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="https://github.com/chirag127" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/ui-manager.js"></script>
+</body>
+
+</html>
