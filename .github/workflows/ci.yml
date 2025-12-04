@@ -1,0 +1,72 @@
+name: CI
+
+# Trigger the workflow on push to main and pull request events
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Build and Test job
+  build_and_test:
+    # Use the latest Ubuntu runner for CI tasks
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # Define Node.js versions to test against. Use a recent LTS and the current latest.
+        node-version: [ '20', '21' ]
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js environment for specified version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          # Cache npm dependencies to speed up subsequent runs
+          cache: 'npm'
+
+      # Step 3: Install project dependencies using npm
+      # This assumes a standard JavaScript/TypeScript project structure.
+      - name: Install Dependencies
+        run: npm ci
+
+      # Step 4: Lint the code using Biome (Fast, modern linter and formatter)
+      # Assumes Biome is configured in package.json or biome.json
+      - name: Lint Code (Biome)
+        run: npm run lint # Or biome check --apply
+
+      # Step 5: Format the code using Biome
+      # This ensures code consistency across the project.
+      - name: Format Code (Biome)
+        run: npm run format # Or biome format --write
+
+      # Step 6: Run Unit Tests using Vitest
+      # Assumes Vitest is configured for unit testing.
+      - name: Run Unit Tests (Vitest)
+        run: npm test
+
+      # Step 7: Build the project (e.g., for production)
+      # This step validates that the project can be built successfully.
+      - name: Build Project
+        run: npm run build
+
+      # Step 8: (Optional) Upload coverage reports if configured (e.g., Codecov)
+      # This step is typically configured to upload coverage to a service like Codecov.
+      # Requires Codecov token to be set as a GitHub secret.
+      # - name: Upload Coverage to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     fail_ci_if_error: true
+
+      # Step 9: (Optional) E2E Tests using Playwright (if applicable)
+      # If End-to-End tests are part of the workflow, they would be run here.
+      # This requires a browser environment and potentially a built application.
+      # - name: Run E2E Tests (Playwright)
+      #   run: npm run e2e
